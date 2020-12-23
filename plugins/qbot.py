@@ -2,7 +2,6 @@
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-
 from userbot import bot
 from userbot.utils import admin_cmd
 

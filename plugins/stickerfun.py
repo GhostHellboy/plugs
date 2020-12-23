@@ -5,7 +5,6 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
-
 from userbot import CMD_HELP, bot
 from userbot.helpers.functions import deEmojify
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd

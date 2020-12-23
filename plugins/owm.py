@@ -12,7 +12,6 @@ import requests
 from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
-
 from userbot import CMD_HELP
 from userbot import OPEN_WEATHER_MAP_APPID as OWM_API
 from userbot.events import errors_handler, register

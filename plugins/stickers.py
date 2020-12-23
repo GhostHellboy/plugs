@@ -12,7 +12,6 @@ from telethon.tl.types import (
     InputStickerSetID,
     MessageMediaPhoto,
 )
-
 from userbot import CMD_HELP
 from userbot.uniborgConfig import Config
 from userbot.utils import *

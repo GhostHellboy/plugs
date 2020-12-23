@@ -6,9 +6,8 @@ Will not work for already approved people.
 """
 import asyncio
 
-from telethon import functions
-
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
+from telethon import functions
 from userbot import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in heroku vars"

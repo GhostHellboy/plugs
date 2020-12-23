@@ -14,7 +14,6 @@ from random import choice
 from urllib import parse
 
 import requests
-
 from userbot.utils import admin_cmd
 
 BASE_URL = "https://headp.at/pats/{}"

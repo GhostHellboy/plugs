@@ -12,7 +12,6 @@ from PIL import Image
 from telethon.errors.rpcerrorlist import StickersetInvalidError
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.types import InputStickerSetShortName, MessageMediaPhoto
-
 from userbot.utils import admin_cmd
 
 

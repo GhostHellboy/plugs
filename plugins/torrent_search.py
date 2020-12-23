@@ -7,7 +7,6 @@ By:-@Zero_cool7870
 """
 import requests
 from bs4 import BeautifulSoup as bs
-
 from userbot.utils import admin_cmd
 
 

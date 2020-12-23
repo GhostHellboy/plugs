@@ -12,7 +12,6 @@ import urllib
 import requests
 from bs4 import BeautifulSoup
 from PIL import Image
-
 from userbot import CMD_HELP, bot
 from userbot.utils import errors_handler, register
 

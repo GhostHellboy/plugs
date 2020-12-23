@@ -16,7 +16,6 @@ import re
 import aiohttp
 from bs4 import BeautifulSoup
 from telethon.utils import get_inner_text
-
 from userbot.utils import admin_cmd
 
 logger.info(Config.OPEN_LOAD_LOGIN)
