@@ -7,7 +7,6 @@ Syntax : .gps <location name>
 
 from geopy.geocoders import Nominatim
 from telethon.tl import types
-
 from userbot.utils import admin_cmd
 
 

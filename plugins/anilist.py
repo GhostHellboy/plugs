@@ -8,10 +8,9 @@ import json
 import re
 
 import requests
-
 from userbot import *
-from userbot.utils import *
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import *
 
 
 async def callAPI(search_str):
@@ -91,5 +90,5 @@ async def anilist(event):
 
 
 CmdHelp("anilist").add_command(
-  'anilist', '<anime name>', 'Shows you the details of the anime'
+    "anilist", "<anime name>", "Shows you the details of the anime"
 ).add()

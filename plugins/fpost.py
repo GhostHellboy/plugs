@@ -1,11 +1,9 @@
 import string
 
 from telethon.tl.types import Channel
-
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 from userbot.uniborgConfig import Config
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 global msg_cache
 msg_cache = {}
@@ -92,9 +90,13 @@ async def _(event):
 
 
 CmdHelp("fpost").add_command(
-  'fpost', '<your msg>', 'Checks all your groups and sends the msg matching the given keyword'
+    "fpost",
+    "<your msg>",
+    "Checks all your groups and sends the msg matching the given keyword",
 ).add_command(
-  'frwd', '<reply to a msg>', 'Enables seen counter in replied msg. To know how many users have seen your msg.'
+    "frwd",
+    "<reply to a msg>",
+    "Enables seen counter in replied msg. To know how many users have seen your msg.",
 ).add_command(
-  'resend', '<reply to a msg>', 'Just resends the replied msg'
+    "resend", "<reply to a msg>", "Just resends the replied msg"
 ).add()

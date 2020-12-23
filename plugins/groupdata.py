@@ -18,7 +18,6 @@ from telethon.tl.functions.channels import (
 from telethon.tl.functions.messages import GetFullChatRequest, GetHistoryRequest
 from telethon.tl.types import ChannelParticipantsAdmins, MessageActionChannelMigrateFrom
 from telethon.utils import get_input_location
-
 from userbot import CMD_HELP
 from userbot.utils import admin_cmd, errors_handler
 

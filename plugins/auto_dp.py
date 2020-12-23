@@ -17,10 +17,8 @@ import urllib
 
 import requests
 from telethon.tl import functions
-
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
 COLLECTION_STRING1 = [
     "awesome-batman-wallpapers",
@@ -379,24 +377,20 @@ async def main(event):
         await event.client(functions.photos.UploadProfilePhotoRequest(file))
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(600)
-        
 
-CmdHelp("auto_dp").add_command(
-  'batmandp', None, 'Starts autodp of batman'
+
+CmdHelp("auto_dp").add_command("batmandp", None, "Starts autodp of batman").add_command(
+    "thordp", None, "Starts autodp of thor"
+).add_command("actressdp", None, "Starts autodp of actress").add_command(
+    "animedp", None, "Starts autodp of anime"
 ).add_command(
-  'thordp', None, 'Starts autodp of thor'
+    "avengersdp", None, "Starts autodp of avengers"
 ).add_command(
-  'actressdp', None, 'Starts autodp of actress'
+    "gamerdp", None, "Starts autodp of gamer theame"
 ).add_command(
-  'animedp', None, 'Starts autodp of anime'
+    "hackerdp", None, "Starts autodp of hackers theame"
 ).add_command(
-  'avengersdp', None, 'Starts autodp of avengers'
+    "spacedp", None, "Starts autodp of space"
 ).add_command(
-  'gamerdp', None, 'Starts autodp of gamer theame'
-).add_command(
-  'hackerdp', None, 'Starts autodp of hackers theame'
-).add_command(
-  'spacedp', None, 'Starts autodp of space'
-).add_command(
-  'wallpapers', None, 'Starts autodp of random wallpapers'
+    "wallpapers", None, "Starts autodp of random wallpapers"
 ).add()

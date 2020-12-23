@@ -3,10 +3,9 @@ import time
 from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
-
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 
 @bot.on(admin_cmd(pattern="stats$"))
 @bot.on(sudo_cmd(pattern="stats$", allow_sudo=True))
@@ -103,5 +102,5 @@ def user_full_name(user):
 
 
 CmdHelp("count").add_command(
-  'stat', None, 'Shows you the count of your groups, channels, private chats, etc.'
+    "stat", None, "Shows you the count of your groups, channels, private chats, etc."
 ).add()

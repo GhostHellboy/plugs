@@ -1,10 +1,8 @@
-from userbot.uniborgConfig import Config
 import asyncio
 
 import requests
-from telethon import functions
-
-from userbot import ALIVE_NAME, CMD_LIST, SUDO_LIST
+from userbot import SUDO_LIST
+from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 

@@ -8,10 +8,9 @@ import time
 from datetime import datetime
 
 from pySmartDL import SmartDL
-
-from userbot import ALIVE_NAME, CMD_HELP
-from userbot.utils import admin_cmd, humanbytes, progress, sudo_cmd
+from userbot import ALIVE_NAME
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, humanbytes, progress, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
 
@@ -97,5 +96,5 @@ async def _(event):
 
 
 CmdHelp("download").add_command(
-  'download', '<link/filename> or reply to media', 'Downloads the file to the server'
+    "download", "<link/filename> or reply to media", "Downloads the file to the server"
 ).add()

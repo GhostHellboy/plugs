@@ -10,17 +10,10 @@ from asyncio import sleep
 from requests import get
 from telethon.events import ChatAction
 from telethon.tl.types import ChannelParticipantsAdmins, Message
-
-from userbot import (
-    ANTI_SPAMBOT,
-    ANTI_SPAMBOT_SHOUT,
-    BOTLOG,
-    BOTLOG_CHATID,
-    CMD_HELP,
-    bot,
-)
-from userbot.utils import errors_handler
+from userbot import ANTI_SPAMBOT, ANTI_SPAMBOT_SHOUT, BOTLOG, BOTLOG_CHATID, bot
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import errors_handler
+
 
 @bot.on(ChatAction)
 @errors_handler
@@ -199,4 +192,7 @@ async def ANTI_SPAMBOT(welcm):
 
 
 CmdHelp("antispam_bot").add_command(
-  None, None, 'If enabled in config.env or env var, this will ban or report the user to admins if they match the userbot antispam algorithm')
+    None,
+    None,
+    "If enabled in config.env or env var, this will ban or report the user to admins if they match the userbot antispam algorithm",
+)

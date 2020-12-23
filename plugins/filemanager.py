@@ -233,17 +233,19 @@ async def handler(event):
 
 
 CmdHelp("filemanager").add_command(
-  'lslocal', None, 'Gives the list of downloaded medias in your hellbot server.'
+    "lslocal", None, "Gives the list of downloaded medias in your hellbot server."
 ).add_command(
-  'lsroot', None, 'Gives the list of all files in root directory of Hellbot repo.'
+    "lsroot", None, "Gives the list of all files in root directory of Hellbot repo."
 ).add_command(
-  'lssaved', None, 'Gives the list of all files in Saved directory of your hellbot server'
+    "lssaved",
+    None,
+    "Gives the list of all files in Saved directory of your hellbot server",
 ).add_command(
-  'rnsaved', 'saved file name', 'Renames the file in saved directory'
+    "rnsaved", "saved file name", "Renames the file in saved directory"
 ).add_command(
-  'rnlocal', 'downloaded file name', 'Renames the file in downloaded directory'
+    "rnlocal", "downloaded file name", "Renames the file in downloaded directory"
 ).add_command(
-  'delsave', 'saved path', 'Deletes the file from given saved path'
+    "delsave", "saved path", "Deletes the file from given saved path"
 ).add_command(
-  'delocal', 'downloaded path', 'Deletes the file from given downloaded path'
+    "delocal", "downloaded path", "Deletes the file from given downloaded path"
 ).add()

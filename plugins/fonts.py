@@ -1,8 +1,8 @@
 # Added more fonts by @Kraken_The_BadASS
 # Ported from saitama i guess
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 normiefont = [
     "a",
@@ -173,6 +173,7 @@ bubbletextfont = [
     "Ⓩ",
 ]
 
+
 @bot.on(admin_cmd(pattern="weeb(?: |$)(.*)", command="weeb"))
 @bot.on(sudo_cmd(pattern="weeb(?: |$)(.*)", command="weeb", allow_sudo=True))
 async def weebify(event):
@@ -267,14 +268,13 @@ async def bubbletxt(event):
             string = string.replace(normiecharacter, bubblecharacter)
     await edit_or_reply(event, string)
 
+
 CmdHelp("fonts").add_command(
-  'weeb', '<text>', 'Modifies your text in weeby font'
+    "weeb", "<text>", "Modifies your text in weeby font"
+).add_command("tanify", "<text>", "Mofifies your text in tany font").add_command(
+    "lintxt", "<text>", "Modifies your text in liny font"
 ).add_command(
-  'tanify', '<text>', 'Mofifies your text in tany font'
+    "boxify", "<text>", "Modifies your text in box font"
 ).add_command(
-  'lintxt', '<text>', 'Modifies your text in liny font'
-).add_command(
-  'boxify', '<text>', 'Modifies your text in box font'
-).add_command(
-  'bubble', '<text>', 'Modifies your text in bubble font'
+    "bubble", "<text>", "Modifies your text in bubble font"
 ).add()

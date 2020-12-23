@@ -10,10 +10,9 @@ import html
 from telethon.tl import functions
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-
-from userbot import ALIVE_NAME, BIO_MSG, CMD_HELP
-from userbot.utils import admin_cmd
+from userbot import ALIVE_NAME, BIO_MSG
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
 
@@ -147,7 +146,9 @@ async def get_full_user(event):
 
 
 CmdHelp("clone").add_command(
-  'clone', 'username/reply to user', 'Steals others profile including dp, name, bio.'
+    "clone", "username/reply to user", "Steals others profile including dp, name, bio."
 ).add_command(
-  'revert', None, 'To get back to your profile but it will show ALIVE_NAME instead of your current name and DEFAULT_BIO instead of your current bio'
+    "revert",
+    None,
+    "To get back to your profile but it will show ALIVE_NAME instead of your current name and DEFAULT_BIO instead of your current bio",
 ).add()

@@ -1,13 +1,13 @@
-
 import asyncio
 import io
 import os
 import sys
 import traceback
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import *
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 
 @bot.on(admin_cmd(pattern="exec(?: |$|\n)(.*)", command="exec"))
 @bot.on(sudo_cmd(pattern="exec(?: |$|\n)(.*)", command="exec", allow_sudo=True))
@@ -17,7 +17,7 @@ async def _(event):
     cmd = "".join(event.text.split(maxsplit=1)[1:])
     if not cmd:
         return await edit_delete(event, "`What should i execute?..`")
-    hellevent = await edit_or_reply(event, "`Executing.....`")
+    await edit_or_reply(event, "`Executing.....`")
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
@@ -103,8 +103,9 @@ async def aexec(code, smessatatus):
         message, event, reply, message.client, p, message.chat_id
     )
 
-CmdHelp("eval_exec").add_command(
-  'eval', '<expr>', 'Execute python script'
-).add_command(
-  'exec', '<command>', 'Execute a Terminal command on HellBot server and shows details'
+
+CmdHelp("eval_exec").add_command("eval", "<expr>", "Execute python script").add_command(
+    "exec",
+    "<command>",
+    "Execute a Terminal command on HellBot server and shows details",
 ).add()

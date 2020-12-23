@@ -28,9 +28,8 @@ from apiclient.http import MediaFileUpload
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
 from telethon import events
-
-from userbot.utils import admin_cmd, humanbytes, progress, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, humanbytes, progress, sudo_cmd
 
 # Path to token json file, it should be in same directory as script
 G_DRIVE_TOKEN_FILE = Config.TMP_DOWNLOAD_DIRECTORY + "/auth_token.txt"
@@ -59,7 +58,9 @@ async def _(event):
         )
         return
     if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work"
+        await edit_or_reply(
+            event,
+            "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work",
         )
         return
     input_str = event.pattern_match.group(1)
@@ -96,7 +97,9 @@ async def _(event):
             required_file_name = input_str
             await hellbot.edit("Found `{}` in {} seconds.".format(input_str, ms))
         else:
-            await hellbot.edit("File Not found in local server. Give me a file path :((")
+            await hellbot.edit(
+                "File Not found in local server. Give me a file path :(("
+            )
             return False
     # logger.info(required_file_name)
     if required_file_name:
@@ -175,7 +178,9 @@ async def _(event):
         )
         return
     if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work"
+        await edit_or_reply(
+            event,
+            "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work",
         )
         return
     input_str = event.pattern_match.group(1)
@@ -214,7 +219,9 @@ async def _(event):
         )
         return
     if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work"
+        await edit_or_reply(
+            event,
+            "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work",
         )
         return
     t_reqd_comd = event.pattern_match.group(1)
@@ -250,7 +257,9 @@ async def _(event):
         )
         return
     if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work"
+        await edit_or_reply(
+            event,
+            "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work",
         )
         return
     input_str = event.pattern_match.group(1).strip()
@@ -468,18 +477,18 @@ async def gdrive_search(http, search_query):
             msg += str(e)
             break
     return msg
-    
+
 
 CmdHelp("gdrive2").add_command(
-  'gdrive', '<file path>', 'Downloads file from local server'
+    "gdrive", "<file path>", "Downloads file from local server"
+).add_command("gclear", None, "Clears The Custom Folder ID").add_command(
+    "gdir",
+    "<path>",
+    "get file parameters, upload file and print out result URL for download",
 ).add_command(
-  'gclear', None, 'Clears The Custom Folder ID'
+    "drive delete", "<path>", "Deletes the provided directory"
 ).add_command(
-  'gdir', '<path>', 'get file parameters, upload file and print out result URL for download'
+    "drive get", "<path>", "Gets you the link of file"
 ).add_command(
-  'drive delete', '<path>', 'Deletes the provided directory'
-).add_command(
-  'drive get', '<path>', 'Gets you the link of file'
-).add_command(
-  'sdrive', '<name>', 'Searches for the given file in your gDrive'
+    "sdrive", "<name>", "Searches for the given file in your gDrive"
 ).add()

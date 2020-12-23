@@ -15,9 +15,7 @@ import requests
 from cowpy import cow
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply, register
+from userbot.utils import admin_cmd, edit_or_reply, register, sudo_cmd
 
 # ================= CONSTANT =================
 
@@ -618,7 +616,10 @@ async def vapor(vpr):
 @bot.on(sudo_cmd(pattern=f"repo", allow_sudo=True))
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await edit_or_reply(event, "Click [here](https://github.com/HellBoy-OP/HellBot) to open this 🔥**Lit AF!!**🔥 __Hêllẞø†__ Repo.. Join channel :- @HellBot_Official")
+        await edit_or_reply(
+            event,
+            "Click [here](https://github.com/HellBoy-OP/HellBot) to open this 🔥**Lit AF!!**🔥 __Hêllẞø†__ Repo.. Join channel :- @HellBot_Official",
+        )
 
 
 @register(outgoing=True, pattern="^.str(?: |$)(.*)")
@@ -701,7 +702,7 @@ async def bluetext(bte):
                 "`Are you a stupid animal which is attracted to colours?`"
             )
 
-        
+
 @register(outgoing=True, pattern="^.owo(?: |$)(.*)")
 async def faces(owo):
     """ UwU """

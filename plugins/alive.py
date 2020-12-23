@@ -1,9 +1,6 @@
 from userbot import *
-from userbot.utils import *
 from userbot.cmdhelp import CmdHelp
-from telethon.events import NewMessage
-from telethon.tl.custom import Dialog
-from telethon.tl.types import Channel, Chat, User
+from userbot.utils import *
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
 
@@ -45,6 +42,7 @@ async def amireallyalive(alive):
     await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
     await alive.delete()
 
+
 CmdHelp("alive").add_command(
-  'alive', None, 'Check weather the bot is alive or not'
+    "alive", None, "Check weather the bot is alive or not"
 ).add()

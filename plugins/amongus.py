@@ -4,9 +4,9 @@
 
 
 import asyncio
-from userbot.cmdhelp import CmdHelp
 
 from userbot import *
+from userbot.cmdhelp import CmdHelp
 from userbot.utils import *
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
@@ -135,11 +135,15 @@ async def _(event):
 
 
 CmdHelp("amongus").add_command(
-  'imp', 'Name/username', 'Finds the imposter with sticker. Imposter-True'
+    "imp", "Name/username", "Finds the imposter with sticker. Imposter-True"
 ).add_command(
-  'impn', 'Name/Username', 'Finds the imposter with sticker. Imposter-False'
+    "impn", "Name/Username", "Finds the imposter with sticker. Imposter-False"
 ).add_command(
-  'timp', 'name/username', 'Finds imposter without sticker(Text only). Imposter - True'
+    "timp",
+    "name/username",
+    "Finds imposter without sticker(Text only). Imposter - True",
 ).add_command(
-  'timpn', 'name/username', 'Finds imposter without sticker(Text Only). Imposter - False'
+    "timpn",
+    "name/username",
+    "Finds imposter without sticker(Text Only). Imposter - False",
 ).add()

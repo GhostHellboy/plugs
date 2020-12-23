@@ -2,10 +2,10 @@ import os
 from pathlib import Path
 
 from telethon.tl.types import InputMessagesFilterDocument
-
+from userbot.cmdhelp import CmdHelp
 from userbot.utils import admin_cmd, load_module
 from var import Var
-from userbot.cmdhelp import CmdHelp
+
 
 @borg.on(admin_cmd(pattern="extdl$", outgoing=True))
 async def install(event):
@@ -76,8 +76,13 @@ async def install(event):
                 ),
             )
 
+
 CmdHelp("extra_py").add_command(
-  'extdl', None, 'Installs all plugins from the channal which id is in PLUGIN_CHANNEL variable'
+    "extdl",
+    None,
+    "Installs all plugins from the channal which id is in PLUGIN_CHANNEL variable",
 ).add_command(
-  'installall', '<channel/grp username>', 'Installs all the plugins in provided channel / group. (May get floodwait error)'
+    "installall",
+    "<channel/grp username>",
+    "Installs all the plugins in provided channel / group. (May get floodwait error)",
 ).add()

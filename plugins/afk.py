@@ -6,10 +6,9 @@ from datetime import datetime
 
 from telethon import events
 from telethon.tl import functions, types
-
 from userbot import *
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
@@ -152,6 +151,9 @@ async def _(event):
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
 
+
 CmdHelp("afk").add_command(
-  'afk', '<reply to media>/<or type a reson>', 'Marks you AFK(Away from Keyboard) with reason(if given) also shows afk time. Media also supported.'
+    "afk",
+    "<reply to media>/<or type a reson>",
+    "Marks you AFK(Away from Keyboard) with reason(if given) also shows afk time. Media also supported.",
 ).add()

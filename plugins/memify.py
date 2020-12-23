@@ -6,7 +6,6 @@ import os
 import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
-
 from userbot.utils import admin_cmd
 from var import Var
 

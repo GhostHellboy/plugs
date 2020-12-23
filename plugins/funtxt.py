@@ -1,8 +1,6 @@
 import nekos
-
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="ftext ?(.*)"))
@@ -59,11 +57,9 @@ async def hmm(hell):
 
 
 CmdHelp("funtxts").add_command(
-  'cat', None, 'Sends you some random cat facial text art'
+    "cat", None, "Sends you some random cat facial text art"
+).add_command("why", None, "Asks some random funny questions").add_command(
+    "fact", None, "Sends you some random facts"
 ).add_command(
-  'why', None, 'Asks some random funny questions'
-).add_command(
-  'fact', None, 'Sends you some random facts'
-).add_command(
-  'ftext', '<text>', 'Writes your text in "F" format'
+    "ftext", "<text>", 'Writes your text in "F" format'
 ).add()

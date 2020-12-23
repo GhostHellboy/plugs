@@ -6,8 +6,9 @@ Available Commands:
 .emoji -_-"""
 import asyncio
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
+
 
 @bot.on(admin_cmd(pattern="emoji (.*)"))
 async def _(event):
@@ -33,6 +34,9 @@ async def _(event):
             await asyncio.sleep(animation_interval)
             await event.edit(animation_chars[i % 2])
 
+
 CmdHelp("emoji").add_command(
-  'emoji', None, 'Available cmnds are:-\n• shrug\n• apple\n• :/\n• -_-\n Add .emoji in front of all cmds...'
+    "emoji",
+    None,
+    "Available cmnds are:-\n• shrug\n• apple\n• :/\n• -_-\n Add .emoji in front of all cmds...",
 ).add()
