@@ -21,7 +21,6 @@ from telethon.tl.types import (
     InputPeerChat,
     MessageEntityMentionName,
 )
-
 from userbot import CMD_HELP
 from userbot.events import register
 

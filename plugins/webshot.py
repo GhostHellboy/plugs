@@ -5,7 +5,6 @@ Syntax: .screencapture <Website URL>"""
 import io
 
 import requests
-
 from userbot.utils import admin_cmd
 
 

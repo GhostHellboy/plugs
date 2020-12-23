@@ -15,12 +15,10 @@ from os import environ, execle, path, remove
 
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-
-from userbot import CMD_HELP
+from userbot.cmdhelp import CmdHelp
 from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
 from var import Var
-from userbot.cmdhelp import CmdHelp
 
 UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 UPSTREAM_REPO_BRANCH = "master"
@@ -88,8 +86,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f"{txt}\n"
-                "**Invalid Heroku credentials for updating Hêllẞøt.**"
+                f"{txt}\n" "**Invalid Heroku credentials for updating Hêllẞøt.**"
             )
             return repo.__del__()
         ups_rem.fetch(ac_br)
@@ -218,9 +215,11 @@ async def upstream(event):
 
 
 CmdHelp("update").add_command(
-  'update', None, 'Checks if the bot is up-to-date or not'
+    "update", None, "Checks if the bot is up-to-date or not"
 ).add_command(
-  'update now', None, 'Updates your bot to new codes if any else Force updates bot.'
+    "update now", None, "Updates your bot to new codes if any else Force updates bot."
 ).add_command(
-  'update deploy', None, 'Updates your bot to new codes if any. Note that this process may take upto 30 mins'
+    "update deploy",
+    None,
+    "Updates your bot to new codes if any. Note that this process may take upto 30 mins",
 ).add()
