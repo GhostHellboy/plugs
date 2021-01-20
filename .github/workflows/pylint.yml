@@ -1,37 +1,35 @@
-name: HellBotChecker
+name: PyLint
 
 on: [push, pull_request]
 
 jobs:
-  build:
-
+  PEP8:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 5
-      matrix:
-        python-version: [3.9]
-
     steps:
-    - uses: actions/checkout@master
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@master
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        sudo apt-get install libpq-dev
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install flake8 flake8-print flake8-quotes
-    - name: Check for showstoppers
-      run: |
-        # stop the build if there are Python syntax errors
-        flake8 . --count --select=E999 --show-source --statistics
-  shellcheck:
+      - uses: actions/checkout@v2
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@master
-    - name: Check for install script errors
-      uses: ludeeus/action-shellcheck@master
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Install Python lint libraries
+        run: |
+          pip install autoflake isort black
+      - name: Remove unused imports and variables
+        run: |
+          autoflake --in-place --recursive --remove-all-unused-imports --remove-unused-variables --ignore-init-module-imports .
+      - name: lint with isort
+        run: |
+          isort .
+      - name: lint with black
+        run: |
+          black .
+      # commit changes
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'pylint: auto fixes'
+          commit_options: '--no-verify'
+          repository: .
+          commit_user_name: HellBoy-OP
+          commit_user_email: ghosthellboy4@gmail.com
+          commit_author: HellBoy-OP <ghosthellboy4@gmail.com>
